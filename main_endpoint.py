@@ -7,11 +7,11 @@ import random
 app = Flask(__name__)
 
 # Load your collaborative filtering model and encoders
-model = load_model("model/h5/Kucingku_model.h5")
-encoders = np.load('cat_encoder.npy', allow_pickle=True).item()
+model = load_model("./Kucingku_model.h5")
+encoders = np.load('./cat_encoder.npy', allow_pickle=True).item()
 
 # Load your data (replace with actual data loading code)
-df = pd.read_csv("dataset/KucingKu_dataset.csv")
+df = pd.read_csv("./KucingKu_dataset.csv")
 
 # Recommendation function
 def collaborative_filtering_recommendation(model, encoders, user_gender, user_age, cat_gender, cat_age, cat_size, cat_breed, top_n=5, similarity_threshold=0.5):
